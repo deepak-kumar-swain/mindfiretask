@@ -1,3 +1,8 @@
+# INSTRUCTION
+
+1. Create a Mongo Collection named ** mindfire **
+2. To run backend code, Go to ** backend ** folder
+
 # Taskdpk
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
