@@ -1,0 +1,57 @@
+<div class="loginSection">
+  <div class="loginDiv">
+    <div class="card mb-3 logincard">
+      <div class="card-header text-white bg-info" *ngIf="!registerShow">Login</div>
+      <div class="card-header text-white bg-info" *ngIf="registerShow">Register</div>
+      <div class="card-body">
+        <form [formGroup]="loginForm" (submit)="loginSubmit()" *ngIf="!registerShow">
+          <fieldset>
+            <div class="form-group">
+              <label for="email">Email address*</label>
+              <input type="email" class="form-control" formControlName="email" id="email" placeholder="Enter Email Address">
+              <small class="font13" *ngIf="lf.email.errors">
+                <span class="text-danger" *ngIf="lf.email.errors.email">Invalid Email Address</span>
+              </small>
+            </div>
+            <div class="form-group">
+              <label for="pass">Password*</label>
+              <input type="password" class="form-control" formControlName="password" id="pass" placeholder="Password">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-outline-info btn-block" [disabled]="loginForm.invalid">Login</button>
+            </div>
+            <br>
+            <p class="text-center mb-0 font11"><small class="text-muted">Don't Have Account?</small></p>
+            <p class="mt-0 text-center pointer" (click)="openRegister()"><small class="text-center text-muted">Click Here to Register</small></p>
+          </fieldset>
+        </form>
+
+        <form [formGroup]="registerForm" (submit)="registerSubmit()" *ngIf="registerShow">
+          <fieldset>
+            <div class="form-group">
+              <label for="names">Name*</label>
+              <input type="text" class="form-control" formControlName="name" id="names" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <label for="emails">Email address*</label>
+              <input type="email" class="form-control" formControlName="email" id="emails" placeholder="Enter Email Address">
+              <small class="font13" *ngIf="rf.email.errors">
+                <span class="text-danger" *ngIf="rf.email.errors.email">Invalid Email Address</span>
+              </small>
+            </div>
+            <div class="form-group">
+              <label for="passs">Password*</label>
+              <input type="password" class="form-control" formControlName="password" id="passs" placeholder="Password">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-outline-info btn-block" [disabled]="registerForm.invalid">Register</button>
+            </div>
+            <br>
+            <p class="text-center mb-0 font11"><small class="text-muted">Already Have Account?</small></p>
+            <p class="mt-0 text-center pointer" (click)="closeRegister()"><small class="text-center text-muted">Click Here to Login</small></p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.loginSection {
+  //text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: silver;
+}
+.logincard {
+  border: 1px solid #033c73;
+}
+@media (min-width: 768px) {
+  .logincard {
+    width: 30vw;
+  }
+}
+@media (min-width: 100px) and (max-width: 767px) {
+  .logincard {
+    width: 90vw;
+  }
+}
